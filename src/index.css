@@ -19,3 +19,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.blur {
+  filter: blur(200px); /* Adjust the blur amount as needed */
+}
