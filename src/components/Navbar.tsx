@@ -46,6 +46,13 @@ const Navbar = () => {
   const onClose = () => {
     setOpen(false);
   };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="flex items-center justify-between px-8 sm:px-20 lg:px-10 xl:px-20 h-20 sticky top-0 bg-white opacity-80">
       {/* RESPONSIVE MENU */}
@@ -61,6 +68,7 @@ const Navbar = () => {
                 onClick={() => {
                   setActiveIndx(index);
                   onClose();
+                  scrollToSection(navItem.ID);
                 }}
                 key={navItem._id}
                 className={`text-xl font-semibold hover:text-gray-500 cursor-pointer ${
@@ -83,7 +91,10 @@ const Navbar = () => {
       <div className="items-center gap-8 hidden lg:flex">
         {navItems.map((navItem, index) => (
           <p
-            onClick={() => setActiveIndx(index)}
+            onClick={() => {
+              setActiveIndx(index);
+              scrollToSection(navItem.ID);
+            }}
             key={navItem._id}
             className={`text-xl font-semibold hover:text-gray-500 cursor-pointer ${
               activeIndx === index ? "text-gray-400" : ""

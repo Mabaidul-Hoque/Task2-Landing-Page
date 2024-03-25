@@ -3,8 +3,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "../components/Navbar";
 import { faArrowRight, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import { useState } from "react";
+import Features from "../components/Features";
+import Technology from "../components/Technology";
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,19 +15,15 @@ const LandingPage = () => {
     setIsModalOpen(true);
   };
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
   const handleCancel = () => {
     setIsModalOpen(false);
   };
   return (
     <div>
       {/* NAVBAR */}
-      <div className="fixed top-0 w-full shadow-md z-1000">
+      <nav className="fixed top-0 w-full shadow-md">
         <Navbar />
-      </div>
+      </nav>
       {/* MAIN SECTION */}
       <div className="">
         {/* TOP CONATINER */}
@@ -72,6 +70,7 @@ const LandingPage = () => {
             </Modal>
           </div>
         </div>
+
         {/* OVERVIEW CONTAINER */}
         <div
           id="overview"
@@ -92,16 +91,16 @@ const LandingPage = () => {
           <div className="flex items-center gap-20 mr-36">
             <img width={650} src="/demo-product-showcase-01.webp" />
             <div className="flex flex-col gap-10 mt-20">
-              <h1 className="text-6xl font-bold">
-                Extra bass for punchy sound.
+              <h1 className="text-6xl font-bold tracking-widest text-gray-900">
+                Extra bass for punchy sound
               </h1>
               <p className="text-lg">
                 Quality is guaranteed by the latest wireless technology
                 including bluetooth 5.0 high quality codec support and an
                 excellent 30 hour battery life.
               </p>
-              <button className="bg-gray-800 px-6 py-4 text-white w-fit flex items-center justify-center rounded ">
-                <span className="transform ease-in-out hover:translate-x-[10px] hover:scale-105">
+              <button className="bg-gray-800 px-6 py-4 text-white w-fit flex items-center justify-center rounded transform duration-500 ease-in-out hover:scale-105 hover:translate-x-2 shadow-md shadow-gray-700">
+                <span className="transform ease-in-out duration-700 hover:translate-x-[10px] hover:scale-105">
                   Explore features
                   <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
                 </span>
@@ -133,13 +132,19 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* FEATURES CONTAINER */}
-      <div>
-        {/* FEATURES HEADER */}
-        <h1 className="text-center">
-          <span>13</span> Exclusive features.
-        </h1>
+
+        {/* FEATURES */}
+        <div
+          id="features"
+          className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200"
+        >
+          <Features />
+        </div>
+
+        {/* TECHNOLOGY */}
+        <div id="technology" className="py-20">
+          <Technology />
+        </div>
       </div>
     </div>
   );

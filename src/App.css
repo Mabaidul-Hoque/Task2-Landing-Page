@@ -3,3 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+nav {
+  z-index: 1000;
+}
+.headpnone_logo {
+  z-index: 0;
+}
