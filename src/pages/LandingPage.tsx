@@ -1,11 +1,10 @@
-// import React from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "../components/Navbar";
 import { faArrowRight, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "antd";
 import { useState } from "react";
 import Features from "../components/Features";
+import SlidingImages from "../components/SlidingImages";
 import Technology from "../components/Technology";
 
 const LandingPage = () => {
@@ -25,9 +24,9 @@ const LandingPage = () => {
         <Navbar />
       </nav>
       {/* MAIN SECTION */}
-      <div className="">
+      <main className="">
         {/* TOP CONATINER */}
-        <div className="bg-[url('/bg-2.jpg')] bg-cover">
+        <section className="bg-[url('/bg-2.jpg')] bg-cover">
           <div className="flex items-center justify-center pt-28">
             <img src="/demo-product-showcase-rev-slider-01.png" />
           </div>
@@ -69,10 +68,10 @@ const LandingPage = () => {
               ></iframe>
             </Modal>
           </div>
-        </div>
+        </section>
 
         {/* OVERVIEW CONTAINER */}
-        <div
+        <section
           id="overview"
           className="py-20 bg-gradient-to-b from-gray-200 to-sky-200"
         >
@@ -131,21 +130,56 @@ const LandingPage = () => {
               <p className="text-gray-900">Hear the world around you.</p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* FEATURES */}
-        <div
+        {/* FEATURES CONTAINER */}
+        <section
           id="features"
           className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200"
         >
           <Features />
-        </div>
+        </section>
 
-        {/* TECHNOLOGY */}
-        <div id="technology" className="py-20">
+        {/* TECHNOLOGY  CONTAINER*/}
+        <section
+          id="technology"
+          className="py-20 bg-gradient-to-b from-violet-100 to-teal-100"
+        >
           <Technology />
-        </div>
-      </div>
+        </section>
+
+        {/* DESIGN  CONTAINER*/}
+        <section
+          id="design"
+          className="py-20 bg-[url('/bg-logo-6.webp')] bg-no-repeat bg-cover bg-center min-h-screen"
+        >
+          <div className="flex items-center justify-center py-28">
+            <h1 className="text-center text-[#EAEAEA] text-[100px] w-1/2 leading-none font-bold ">
+              A radically original composition
+            </h1>
+          </div>
+          <SlidingImages />
+        </section>
+
+        {/* DESIGN  SUB_SECTION*/}
+        <section className="bg-gray-700 text-white py-10 text-center">
+          <div className="flex items-center justify-center mb-8">
+            <img
+              width={50}
+              className="bg-transparent text-red-500"
+              src="https://cdn-icons-png.freepik.com/512/3355/3355318.png"
+            />
+          </div>
+          <div className="flex items-start justify-center gap-20">
+            <div className="border-b border-gray-400 w-32" />
+            <p>AWARDED ERGONOMICALLY PAINLESS AWESOME HEADPHONE DESIGNED</p>
+            <div className="border-b border-gray-400 w-32" />
+          </div>
+        </section>
+
+        {/* PRICING CONATINER */}
+        <section id="pricing"></section>
+      </main>
     </div>
   );
 };
