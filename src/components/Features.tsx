@@ -66,7 +66,7 @@ const featuresP1 = [
   },
 ];
 
-const Features = () => {
+const Features: React.FC = () => {
   return (
     <>
       {/* FEATURES PART ONE CONTAINER */}

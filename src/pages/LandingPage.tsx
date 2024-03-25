@@ -6,6 +6,9 @@ import { useState } from "react";
 import Features from "../components/Features";
 import SlidingImages from "../components/SlidingImages";
 import Technology from "../components/Technology";
+import Pricing from "../components/Pricing";
+import ImageCarousel from "../components/ImageCarousel";
+import Footer from "../components/Footer";
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,16 +20,24 @@ const LandingPage = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full shadow-md">
-        <Navbar />
+        <Navbar scrollToSection={scrollToSection} />
       </nav>
       {/* MAIN SECTION */}
       <main className="">
         {/* TOP CONATINER */}
-        <section className="bg-[url('/bg-2.jpg')] bg-cover">
+        <section id="top-section" className="bg-[url('/bg-2.jpg')] bg-cover">
           <div className="flex items-center justify-center pt-28">
             <img src="/demo-product-showcase-rev-slider-01.png" />
           </div>
@@ -69,7 +80,6 @@ const LandingPage = () => {
             </Modal>
           </div>
         </section>
-
         {/* OVERVIEW CONTAINER */}
         <section
           id="overview"
@@ -98,7 +108,10 @@ const LandingPage = () => {
                 including bluetooth 5.0 high quality codec support and an
                 excellent 30 hour battery life.
               </p>
-              <button className="bg-gray-800 px-6 py-4 text-white w-fit flex items-center justify-center rounded transform duration-500 ease-in-out hover:scale-105 hover:translate-x-2 shadow-md shadow-gray-700">
+              <button
+                onClick={() => scrollToSection("features")}
+                className="bg-gray-800 px-6 py-4 text-white w-fit flex items-center justify-center rounded transform duration-500 ease-in-out hover:scale-105 hover:translate-x-2 shadow-md shadow-gray-700"
+              >
                 <span className="transform ease-in-out duration-700 hover:translate-x-[10px] hover:scale-105">
                   Explore features
                   <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
@@ -131,7 +144,6 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-
         {/* FEATURES CONTAINER */}
         <section
           id="features"
@@ -139,7 +151,6 @@ const LandingPage = () => {
         >
           <Features />
         </section>
-
         {/* TECHNOLOGY  CONTAINER*/}
         <section
           id="technology"
@@ -147,7 +158,6 @@ const LandingPage = () => {
         >
           <Technology />
         </section>
-
         {/* DESIGN  CONTAINER*/}
         <section
           id="design"
@@ -160,7 +170,6 @@ const LandingPage = () => {
           </div>
           <SlidingImages />
         </section>
-
         {/* DESIGN  SUB_SECTION*/}
         <section className="bg-gray-700 text-white py-10 text-center">
           <div className="flex items-center justify-center mb-8">
@@ -176,10 +185,65 @@ const LandingPage = () => {
             <div className="border-b border-gray-400 w-32" />
           </div>
         </section>
-
         {/* PRICING CONATINER */}
-        <section id="pricing"></section>
+        <section
+          id="price"
+          className="py-20 bg-gradient-to-b from-[#71c6d3] to-[#c5e3e9]"
+        >
+          <Pricing scrollToSection={scrollToSection} />
+        </section>
+        {/* PRE_REGISTRATION FORM */}
+        <div
+          id="pre-registration"
+          className="h-screen bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex items-center justify-center gap-32 px-20"
+        >
+          <div className="w-1/2">
+            <ImageCarousel />
+          </div>
+          <form className="bg-sky-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[30rem] h-[50vh]">
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-xl font-bold mb-2"
+                htmlFor="name"
+              >
+                Name
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-gray-700 text-xl font-bold mb-2"
+                htmlFor="email"
+              >
+                Email
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div className="flex items-center justify-between">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+              >
+                Registration
+              </button>
+            </div>
+          </form>
+        </div>
       </main>
+
+      {/* FOOTER */}
+
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 };

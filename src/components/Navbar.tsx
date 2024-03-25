@@ -26,16 +26,15 @@ const navItems = [
   },
   {
     _id: 5,
-    title: "Review",
-    ID: "review",
-  },
-  {
-    _id: 6,
     title: "Price",
     ID: "price",
   },
 ];
-const Navbar = () => {
+
+interface NavbarProps {
+  scrollToSection: (value: string) => void;
+}
+const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
   const [activeIndx, setActiveIndx] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -47,12 +46,6 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <div className="flex items-center justify-between px-8 sm:px-20 lg:px-10 xl:px-20 h-20 sticky top-0 bg-white opacity-80">
       {/* RESPONSIVE MENU */}
@@ -83,7 +76,8 @@ const Navbar = () => {
       </div>
       {/* ICON */}
       <img
-        className="hidden sm:block"
+        onClick={() => scrollToSection("top-section")}
+        className="hidden sm:block cursor-pointer"
         src="/demo-product-showcase-logo.webp"
         alt="product-showcase-logo"
       />
