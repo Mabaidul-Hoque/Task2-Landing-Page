@@ -8,7 +8,7 @@ import {
   faVolumeLow,
 } from "@fortawesome/free-solid-svg-icons";
 
-const featuresP1 = [
+const features = [
   {
     id: 1,
     icon: (
@@ -69,10 +69,10 @@ const featuresP1 = [
 const Features: React.FC = () => {
   return (
     <>
-      {/* FEATURES PART ONE CONTAINER */}
-      <div className="px-48">
+      {/* FEATURES CONTAINER */}
+      <div className="px-6 sm:px-12 md:px-24 lg:px-48">
         {/* FEATURES PART ONE HEADER */}
-        <h1 className="text-center my-20 flex items-center justify-center gap-8">
+        <h1 className="text-center my-10 flex flex-col sm:flex-row items-center justify-center gap-8">
           <span
             className="text-[150px] font-bold"
             style={{
@@ -89,8 +89,8 @@ const Features: React.FC = () => {
           </div>
         </h1>
         {/* FEATURES */}
-        <div className="flex flex-wrap items-center justify-center gap-12 text-center h-[70vh]">
-          {featuresP1.map((feature) => (
+        <div className="flex flex-wrap items-center justify-center gap-12 text-center min-h-[70vh]">
+          {features.map((feature) => (
             <div key={feature.id} className="max-w-64">
               <div>{feature.icon}</div>
               <h2
@@ -104,16 +104,15 @@ const Features: React.FC = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center gap-4 my-20">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-20 px-6 sm:px-12 md:px-24 lg:px-48">
         <h1 className="w-fit text-white bg-green-500 rounded-full px-4 py-1">
           Impressive
         </h1>
-        <h1 className="text-2xl">
+        <h1 className="text-2xl text-center">
           {" "}
           High quality bass and sound with much more awesome features.
         </h1>
       </div>
-      {/* FEATURES PART TWO CONTAINER */}
     </>
   );
 };

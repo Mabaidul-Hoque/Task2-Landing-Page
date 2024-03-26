@@ -76,7 +76,7 @@ const LandingPage = () => {
         {/* OVERVIEW CONTAINER */}
         <section
           id="overview"
-          className="py-20 bg-gradient-to-b from-gray-200 to-sky-200 hidden"
+          className="py-20 bg-gradient-to-b from-gray-200 to-sky-200"
         >
           {/* OVERVIEW HEADER */}
           <h1 className="text-center text-3xl mb-10">
@@ -90,13 +90,17 @@ const LandingPage = () => {
             </a>
           </h1>
           {/* OVERVIEW MIDDLE */}
-          <div className="flex items-center gap-20 mr-36">
-            <img width={650} src="/demo-product-showcase-01.webp" />
-            <div className="flex flex-col gap-10 mt-20">
-              <h1 className="text-6xl font-bold tracking-widest text-gray-900">
+          <div className="flex items-start flex-col sm:flex-row mr-2 md:mr-6 lg:mr-16 xl:mr-36 relative min-[400px]:px-8 min-[550px]:px-16 sm:px-0">
+            <img
+              // width={"50%"}
+              className="w-[90%] sm:w-[50%] absolute -left-16 sm:top-10 sm:-left-16 md:-left-20 lg:-left-28"
+              src="/demo-product-showcase-01.webp"
+            />
+            <div className="flex flex-col gap-10 mt-20 ml-[5vw] sm:ml-[42vw] md:ml-[45vw] lg:ml-[46vw] pt-32 min-[450px]:pt-52 sm:pt-0">
+              <h1 className="max-[350px]:text-3xl text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold tracking-widest text-gray-900">
                 Extra bass for punchy sound
               </h1>
-              <p className="text-lg">
+              <p className="lg:text-lg">
                 Quality is guaranteed by the latest wireless technology
                 including bluetooth 5.0 high quality codec support and an
                 excellent 30 hour battery life.
@@ -113,34 +117,36 @@ const LandingPage = () => {
             </div>
           </div>
           {/* OVERVIEW END */}
-          <div className="flex items-center justify-between px-32 mt-20">
+          <div className="flex items-center justify-center gap-10 md:gap-20 min-[900px]:gap-5 lg:gap-10 xl:gap-20 flex-wrap px-4 md:px-4 min-[900px]:px-2 lg:px-10 xl:px-32 mt-20 ">
             {/* ONE */}
             <div className="flex items-center gap-4 text-2xl">
               <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-800 hover:text-white">
                 01
               </div>
-              <p className="text-gray-900">Feel the shape of comfort.</p>
+              <p className="text-gray-900 w-48">Feel the shape of comfort.</p>
             </div>
             {/* TWO */}
             <div className="flex items-center gap-4 text-2xl">
               <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-800 hover:text-white">
                 02
               </div>
-              <p className="text-gray-900">Transform your great journey.</p>
+              <p className="text-gray-900 w-48">
+                Transform your great journey.
+              </p>
             </div>
             {/* THREE */}
-            <div className="flex items-center gap-4 text-2xl">
+            <div className="flex items-center gap-4 text-2xl ">
               <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-800 hover:text-white">
                 03
               </div>
-              <p className="text-gray-900">Hear the world around you.</p>
+              <p className="text-gray-900 w-48">Hear the world around you.</p>
             </div>
           </div>
         </section>
         {/* FEATURES CONTAINER */}
         <section
           id="features"
-          className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200 hidden"
+          className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200"
         >
           <Features />
         </section>
