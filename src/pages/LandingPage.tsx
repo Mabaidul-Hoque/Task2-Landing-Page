@@ -9,10 +9,15 @@ import Technology from "../components/Technology";
 import Pricing from "../components/Pricing";
 import ImageCarousel from "../components/ImageCarousel";
 import Footer from "../components/Footer";
+import ProductDropdown from "../components/ProductDropdown";
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
 
+  const handleProductSelection = (product: string) => {
+    setSelectedProduct(product);
+  };
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -192,7 +197,7 @@ const LandingPage = () => {
         >
           <Pricing scrollToSection={scrollToSection} />
         </section>
-        {/* PRE_REGISTRATION FORM */}
+        {/* PRE-BOOKING REGISTRATION FORM */}
         <div
           id="pre-registration"
           className="h-screen bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex items-center justify-center gap-32 px-20"
@@ -200,7 +205,8 @@ const LandingPage = () => {
           <div className="w-1/2">
             <ImageCarousel />
           </div>
-          <form className="bg-sky-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[30rem] h-[50vh]">
+          <form className="bg-sky-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[30rem] min-h-[50vh]">
+            {/* NAME */}
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-xl font-bold mb-2"
@@ -215,6 +221,7 @@ const LandingPage = () => {
                 placeholder="Enter your name"
               />
             </div>
+            {/* EMAIL  */}
             <div className="mb-6">
               <label
                 className="block text-gray-700 text-xl font-bold mb-2"
@@ -229,12 +236,32 @@ const LandingPage = () => {
                 placeholder="Enter your email"
               />
             </div>
+            {/* CHOOSE PRODUCT */}
+            <div className="mb-6">
+              {/* <label
+                className="block text-gray-700 text-xl font-bold mb-2"
+                htmlFor="email"
+              >
+                Choose product
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                id="product"
+                type="text"
+                placeholder="Choose your favourite color"
+              /> */}
+              {/* PRODUCT DROPDOWN */}
+              <ProductDropdown
+                selectedProduct={selectedProduct}
+                onSelect={handleProductSelection}
+              />
+            </div>
             <div className="flex items-center justify-between">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
               >
-                Registration
+                Register here
               </button>
             </div>
           </form>
