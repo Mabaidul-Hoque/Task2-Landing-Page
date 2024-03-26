@@ -52,21 +52,20 @@ const Technology = () => {
 
   return (
     <>
-      <div className="flex items-start gap-36">
+      <div className="flex items-start sm:gap-4 gap-2 md:gap-6 lg:gap-12 xl:gap-36">
         {/* IMAGE */}
         <img
-          width={700}
-          className={`ml-[-150px] sticky top-24 headpnone_logo`}
+          className={`ml-[-100px] sm:ml-[-140px] md:ml-[-150px] lg:ml-[-180px] xl:ml-[-150px] w-[70vw] sm:w-[70vw] md:w-[60vw] lg:w-[55vw] xl:max-w-[50vw] sticky top-24 headpnone_logo`}
           src="/demo-product-showcase-product-05.png"
           alt="headpnoe-logo"
         />
         {/* FEATURES */}
-        <div className="pr-32 mt-24 flex flex-col gap-20">
+        <div className="md:pr-10 lg:pr-12 xl:pr-32 mt-24 flex flex-col gap-20 ">
           {featuresP2.map((feature) => (
             <div key={feature.id} className="flex flex-col gap-10">
               {feature.icon}
               <h1
-                className="text-[90px] font-extrabold font-serif tracking-widest text-gray-900 leading-none"
+                className="text-[28px] sm:text-[50px] md:text-[65px] lg:text-[90px] font-extrabold font-serif tracking-widest text-gray-900 leading-none"
                 style={{
                   background:
                     "linear-gradient(90deg, #43c6ac 0%, #191654 100%)",
@@ -76,15 +75,15 @@ const Technology = () => {
               >
                 {feature.title}
               </h1>
-              <p className="text-xl text-gray-600">{feature.desp}</p>
+              <p className="lg:text-xl text-gray-600">{feature.desp}</p>
               <button
-                className="w-fit bg-gray-800 text-white px-8 py-4 rounded text-xl transform duration-500 ease-in-out hover:scale-105 hover:translate-y-2 shadow-md shadow-gray-700"
+                className="w-fit bg-gray-800 text-white px-6 py-2 sm:px-8 sm:py-4 rounded sm:text-xl transform duration-500 ease-in-out hover:scale-105 hover:translate-y-2 shadow-md shadow-gray-700"
                 onClick={() => {
                   openModal();
                 }}
               >
-                <span className="transform ease-in-out duration-700 hover:translate-x-[10px] hover:scale-105 flex items-end gap-2">
-                  Watch technology
+                <span className="transform ease-in-out duration-700 hover:translate-x-[10px] hover:scale-105 flex items-center sm:items-end gap-2">
+                  Watch<span className="hidden sm:block"> technology</span>
                   <FontAwesomeIcon icon={faYoutube} />
                 </span>
               </button>

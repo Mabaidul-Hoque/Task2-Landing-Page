@@ -153,7 +153,7 @@ const LandingPage = () => {
         {/* TECHNOLOGY  CONTAINER*/}
         <section
           id="technology"
-          className="py-20 bg-gradient-to-b from-violet-100 to-teal-100 hidden"
+          className="py-20 bg-gradient-to-b from-violet-100 to-teal-100 "
         >
           <Technology />
         </section>
