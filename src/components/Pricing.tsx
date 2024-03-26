@@ -34,11 +34,11 @@ interface PricingProps {
 const Pricing: React.FC<PricingProps> = ({ scrollToSection }) => {
   return (
     <>
-      <h1 className="text-center text-gray-800 text-[100px] w-2/3 leading-none font-bold mx-auto mb-20">
+      <h1 className="text-center text-gray-800 text-[35px] sm:text-[60px] md:text-[70px] lg:text-[80px] xl:text-[100px] w-[90%] sm:[80%] lg:w-[75%] xl:w-2/3 leading-none font-bold mx-auto mb-20">
         Choose the perfect product for you
       </h1>
       {/* LIST OF PRODUCTS */}
-      <ul className="list-none flex items-center justify-center flex-wrap gap-20">
+      <ul className="list-none flex items-center justify-center flex-wrap gap-20 px-10">
         {products.map((product) => (
           <li key={product.id} className="flex flex-col items-center gap-4">
             <img
@@ -58,12 +58,12 @@ const Pricing: React.FC<PricingProps> = ({ scrollToSection }) => {
       </ul>
       {/* PRICING CARD */}
       <div className="flex items-center justify-center text-white py-10">
-        <p className="bg-gray-900 px-24 py-6 text-2xl rounded-l font-semibold">
+        <p className="bg-gray-900 px-2 sm:px-12 md:px-20 lg:px-24 py-3 sm:py-6 text-md sm:text-2xl rounded-l font-semibold">
           Just $999
         </p>
         <button
           onClick={() => scrollToSection("pre-registration")}
-          className="bg-gradient-to-r from-[#F91F83] to-[#B02EA5] px-20 py-6 text-2xl font-semibold hover:from-[#A62CAD] hover:to-[#841CD1] rounded-r"
+          className="bg-gradient-to-r from-[#F91F83] to-[#B02EA5] px-2 sm:px-10 md:px-16 lg:px-20 py-3 sm:py-6 text-md sm:text-2xl font-semibold hover:from-[#A62CAD] hover:to-[#841CD1] rounded-r"
         >
           Pre-Booking Registration
         </button>

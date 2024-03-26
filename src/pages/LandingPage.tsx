@@ -14,6 +14,8 @@ import Modal from "../components/Modal";
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleProductSelection = (product: string) => {
     setSelectedProduct(product);
@@ -170,7 +172,7 @@ const LandingPage = () => {
           <SlidingImages />
         </section>
         {/* DESIGN  SUB_SECTION*/}
-        <section className="bg-gray-700 text-white py-10 text-center hidden">
+        <section className="bg-gray-700 text-white py-10 text-center">
           <div className="flex items-center justify-center mb-8">
             <img
               width={50}
@@ -178,28 +180,28 @@ const LandingPage = () => {
               src="https://cdn-icons-png.freepik.com/512/3355/3355318.png"
             />
           </div>
-          <div className="flex items-start justify-center gap-20">
-            <div className="border-b border-gray-400 w-32" />
+          <div className="flex items-start justify-center md:gap-10 lg:gap-20">
+            <div className="border-b border-gray-400 md:w-20 lg:w-32" />
             <p>AWARDED ERGONOMICALLY PAINLESS AWESOME HEADPHONE DESIGNED</p>
-            <div className="border-b border-gray-400 w-32" />
+            <div className="border-b border-gray-400 md:w-20 lg:w-32" />
           </div>
         </section>
         {/* PRICING CONATINER */}
         <section
           id="price"
-          className="py-20 bg-gradient-to-b from-[#71c6d3] to-[#c5e3e9] hidden"
+          className="py-20 bg-gradient-to-b from-[#71c6d3] to-[#c5e3e9]"
         >
           <Pricing scrollToSection={scrollToSection} />
         </section>
         {/* PRE-BOOKING REGISTRATION FORM */}
         <div
           id="pre-registration"
-          className="h-screen bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex items-center justify-center gap-32 px-20 hidden"
+          className="min-h-screen py-20 bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-4 md:gap-8 lg:gap-12 xl:gap-32 px-0 md:px-4 lg:px-10 xl:px-20"
         >
-          <div className="w-1/2">
+          <div className="w-2/5 sm:w-2/5 md:w-1/2 ">
             <ImageCarousel />
           </div>
-          <form className="bg-sky-200 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[30rem] min-h-[50vh]">
+          <form className="bg-sky-200 shadow-md rounded px-8 pt-6 pb-8 mb-4  w-[80vw] max-[400px]:w-[90vw] sm:w-[50vw]  md:w-[50vw] lg:w-[40vw] xl:w-[50vw] min-h-[50vh]">
             {/* NAME */}
             <div className="mb-4">
               <label
@@ -213,10 +215,12 @@ const LandingPage = () => {
                 id="name"
                 type="text"
                 placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             {/* EMAIL  */}
-            <div className="mb-6">
+            <div className="mb-4">
               <label
                 className="block text-gray-700 text-xl font-bold mb-2"
                 htmlFor="email"
@@ -228,10 +232,12 @@ const LandingPage = () => {
                 id="email"
                 type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             {/* CHOOSE PRODUCT */}
-            <div className="mb-6">
+            <div className="mb-4">
               <ProductDropdown
                 selectedProduct={selectedProduct}
                 onSelect={handleProductSelection}
@@ -240,7 +246,7 @@ const LandingPage = () => {
             <div className="flex items-center justify-between">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
+                type="submit"
               >
                 Register here
               </button>
