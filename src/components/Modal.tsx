@@ -23,8 +23,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, videoUrl }) => {
         >
           &#8203;
         </span>
-        <div className="inline-block align-bottom  rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full xl:max-w-6xl">
-          <div className="absolute top-0 right-0">
+
+        <div className="inline-block align-bottom  rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-full px-2 mt-20">
+          <div className="absolute top-0 right-0 sm:top-10 sm:right-10 ">
             <button
               type="button"
               className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
@@ -33,11 +34,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, videoUrl }) => {
               Close
             </button>
           </div>
-          <div className=" px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div className="sm:flex sm:items-start">
-              <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+          <div className="w-full px-4 mt-20 pb-4 sm:p-6 sm:pb-4">
+            <div className="w-full sm:flex sm:items-start">
+              <div className="w-full mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                 <iframe
-                  width="1000"
+                  width="100%"
                   height="420"
                   src={`https://www.youtube.com/embed/${videoUrl}`}
                   title="YouTube video player"

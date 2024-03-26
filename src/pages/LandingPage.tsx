@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "../components/Navbar";
 import { faArrowRight, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "antd";
+
 import { useState } from "react";
 import Features from "../components/Features";
 import SlidingImages from "../components/SlidingImages";
@@ -10,6 +10,7 @@ import Pricing from "../components/Pricing";
 import ImageCarousel from "../components/ImageCarousel";
 import Footer from "../components/Footer";
 import ProductDropdown from "../components/ProductDropdown";
+import Modal from "../components/Modal";
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,12 +47,12 @@ const LandingPage = () => {
           <div className="flex items-center justify-center pt-28">
             <img src="/demo-product-showcase-rev-slider-01.png" />
           </div>
-          <div className="flex items-center justify-between px-24 mb-10">
-            <div className="text-white">
+          <div className="flex items-center justify-center min-[440px]:justify-between flex-wrap gap-10 px-4 min-[900px]:px-8 lg:px-24 mb-10 mt-5 ">
+            <div className="text-white text-center">
               <p className="text-xl">Audio technology</p>
               <p className="text-3xl font-semibold">Adative EQ</p>
             </div>
-            <div className="text-white">
+            <div className="text-white text-center">
               <p className="text-xl">Effective sensors</p>
               <p className="text-3xl font-semibold">Accelerometer</p>
             </div>
@@ -67,6 +68,11 @@ const LandingPage = () => {
               VIDEO
             </button>
             <Modal
+              isOpen={isModalOpen}
+              closeModal={handleCancel}
+              videoUrl="91BUM3WhCfo?si=SsM2BxgLV8fEjcvF"
+            />
+            {/* <Modal
               open={isModalOpen}
               onCancel={handleCancel}
               cancelButtonProps={{ style: { display: "none" } }}
@@ -82,13 +88,13 @@ const LandingPage = () => {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
-            </Modal>
+            </Modal> */}
           </div>
         </section>
         {/* OVERVIEW CONTAINER */}
         <section
           id="overview"
-          className="py-20 bg-gradient-to-b from-gray-200 to-sky-200"
+          className="py-20 bg-gradient-to-b from-gray-200 to-sky-200 hidden"
         >
           {/* OVERVIEW HEADER */}
           <h1 className="text-center text-3xl mb-10">
@@ -152,21 +158,21 @@ const LandingPage = () => {
         {/* FEATURES CONTAINER */}
         <section
           id="features"
-          className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200"
+          className="py-20 bg-gradient-to-b from-slate-200 to-emerald-200 hidden"
         >
           <Features />
         </section>
         {/* TECHNOLOGY  CONTAINER*/}
         <section
           id="technology"
-          className="py-20 bg-gradient-to-b from-violet-100 to-teal-100"
+          className="py-20 bg-gradient-to-b from-violet-100 to-teal-100 hidden"
         >
           <Technology />
         </section>
         {/* DESIGN  CONTAINER*/}
         <section
           id="design"
-          className="py-20 bg-[url('/bg-logo-6.webp')] bg-no-repeat bg-cover bg-center min-h-screen"
+          className="py-20 bg-[url('/bg-logo-6.webp')] bg-no-repeat bg-cover bg-center min-h-screen hidden"
         >
           <div className="flex items-center justify-center py-28">
             <h1 className="text-center text-[#EAEAEA] text-[100px] w-1/2 leading-none font-bold ">
@@ -176,7 +182,7 @@ const LandingPage = () => {
           <SlidingImages />
         </section>
         {/* DESIGN  SUB_SECTION*/}
-        <section className="bg-gray-700 text-white py-10 text-center">
+        <section className="bg-gray-700 text-white py-10 text-center hidden">
           <div className="flex items-center justify-center mb-8">
             <img
               width={50}
@@ -193,14 +199,14 @@ const LandingPage = () => {
         {/* PRICING CONATINER */}
         <section
           id="price"
-          className="py-20 bg-gradient-to-b from-[#71c6d3] to-[#c5e3e9]"
+          className="py-20 bg-gradient-to-b from-[#71c6d3] to-[#c5e3e9] hidden"
         >
           <Pricing scrollToSection={scrollToSection} />
         </section>
         {/* PRE-BOOKING REGISTRATION FORM */}
         <div
           id="pre-registration"
-          className="h-screen bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex items-center justify-center gap-32 px-20"
+          className="h-screen bg-gradient-to-b from-[#b4b3e7] to-[#8ddaa7] flex items-center justify-center gap-32 px-20 hidden"
         >
           <div className="w-1/2">
             <ImageCarousel />
@@ -238,19 +244,6 @@ const LandingPage = () => {
             </div>
             {/* CHOOSE PRODUCT */}
             <div className="mb-6">
-              {/* <label
-                className="block text-gray-700 text-xl font-bold mb-2"
-                htmlFor="email"
-              >
-                Choose product
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="product"
-                type="text"
-                placeholder="Choose your favourite color"
-              /> */}
-              {/* PRODUCT DROPDOWN */}
               <ProductDropdown
                 selectedProduct={selectedProduct}
                 onSelect={handleProductSelection}
