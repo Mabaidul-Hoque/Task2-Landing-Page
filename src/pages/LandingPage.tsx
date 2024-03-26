@@ -160,10 +160,10 @@ const LandingPage = () => {
         {/* DESIGN  CONTAINER*/}
         <section
           id="design"
-          className="py-20 bg-[url('/bg-logo-6.webp')] bg-no-repeat bg-cover bg-center min-h-screen hidden"
+          className="py-20 bg-[url('/bg-logo-6.webp')] bg-no-repeat bg-cover bg-center min-h-screen"
         >
           <div className="flex items-center justify-center py-28">
-            <h1 className="text-center text-[#EAEAEA] text-[100px] w-1/2 leading-none font-bold ">
+            <h1 className="text-center text-[#EAEAEA] text-[45px] sm:text-[70px] min-[800px]:text-[100px] min-[800px]:w-2/3 lg:w-1/2 leading-none font-bold ">
               A radically original composition
             </h1>
           </div>
