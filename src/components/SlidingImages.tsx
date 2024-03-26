@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-
-// import React, { useState, useEffect } from "react";
 const slidingImages = [
   {
     id: 1,
