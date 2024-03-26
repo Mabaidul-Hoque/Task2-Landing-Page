@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "../components/Navbar";
 import { faArrowRight, faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-
 import { useState } from "react";
 import Features from "../components/Features";
 import SlidingImages from "../components/SlidingImages";
@@ -72,23 +71,6 @@ const LandingPage = () => {
               closeModal={handleCancel}
               videoUrl="91BUM3WhCfo?si=SsM2BxgLV8fEjcvF"
             />
-            {/* <Modal
-              open={isModalOpen}
-              onCancel={handleCancel}
-              cancelButtonProps={{ style: { display: "none" } }}
-              okButtonProps={{ style: { display: "none" } }}
-              width={750}
-            >
-              <iframe
-                width="650"
-                height="315"
-                src="https://www.youtube.com/embed/91BUM3WhCfo?si=SsM2BxgLV8fEjcvF"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </Modal> */}
           </div>
         </section>
         {/* OVERVIEW CONTAINER */}
